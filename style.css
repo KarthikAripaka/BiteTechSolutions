@@ -53,7 +53,14 @@ nav a {
 }
 
 nav a.active {
-  background: black;
+  
+  background: linear-gradient(45deg, #74716d, #767777);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 7px;
+}
+.active-home {
+  background: #e59550;
   color: white;
   padding: 6px 12px;
   border-radius: 7px;
