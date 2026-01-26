@@ -215,6 +215,8 @@ button {
 .detail-item p {
   margin: 0;
   color: #666;
+  display: flex;
+  align-items: center;
 }
 .email-link {
   color: #007bff;
@@ -224,15 +226,16 @@ button {
   text-decoration: underline;
 }
 .mail-btn {
-  padding: 8px 12px;
+  padding: 6px 10px;
   background: #e59550;
   color: white;
   border: none;
   border-radius: 5px;
-  font-size: 0.9em;
+  font-size: 0.8em;
   cursor: pointer;
   transition: 0.3s;
   margin-left: 10px;
+  white-space: nowrap;
 }
 .mail-btn:hover {
   background: #d48440;
