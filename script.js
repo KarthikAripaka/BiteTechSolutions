@@ -35,3 +35,23 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.3 });
 
 sections.forEach(section => observer.observe(section));
+
+// Get directions with user location
+function getDirections() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(position => {
+      const lat = position.coords.latitude;
+      const lng = position.coords.longitude;
+      const url = `https://www.google.com/maps/dir/?api=1&origin=${lat},${lng}&destination=Visakhapatnam, Andhra Pradesh, India`;
+      window.open(url, '_blank');
+    }, () => {
+      // Fallback if location denied
+      const url = `https://www.google.com/maps/dir/?api=1&destination=Visakhapatnam, Andhra Pradesh, India`;
+      window.open(url, '_blank');
+    });
+  } else {
+    // Fallback
+    const url = `https://www.google.com/maps/dir/?api=1&destination=Visakhapatnam, Andhra Pradesh, India`;
+    window.open(url, '_blank');
+  }
+}
