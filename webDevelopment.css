@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    
+    cursor: pointer;
     background: linear-gradient(to left, #e59550, #767777);
     padding: 30px 50px 30px 50px;
     border-radius: 25px;
@@ -64,4 +64,8 @@ width: 100%;
 .webdev-rocket{
     color: black;
     font-size: 40px;
+}
+a {
+    text-decoration: none;
+    color: inherit;
 }
