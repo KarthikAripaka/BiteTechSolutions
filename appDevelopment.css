@@ -1,0 +1,77 @@
+.bg{
+     background: linear-gradient(to left, #e09757, #666767);
+     
+}
+.cards-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.appdev-main-heading-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.appdev-card{
+  background: linear-gradient(to left, #e09757, #666767);
+  padding: 30px 50px 30px 50px;
+  border-radius: 22px;
+  margin: 40px 1px;
+}
+.appdev-left-card{
+    width: 350px; /* ADD THIS */
+overflow: hidden;
+}
+.appdev-right-card{
+    width: 350px;
+    color: white;
+font-family: Arial, sans-serif;
+}
+.appdev-card-down{
+    display: flex;
+    gap: 70px;
+align-items: flex-start;
+
+}
+.appdev-project-title{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+
+.appdev-right-card p{
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+
+.appdev-highlight{
+    font-weight: bold;
+}
+.appdev-scroll-container{
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px;
+    
+}
+.appdev-image{
+    width: 220px;
+    flex-shrink: 0;
+    border-radius: 10px;
+}
+.appdev-tagline{
+font-weight: 600;
+margin-bottom: 10px;
+}
+
+
+.appdev-highlight{
+font-weight: bold;
+font-size: 16px;
+}
