@@ -123,7 +123,7 @@ nav a.active {
 }
 
 .dark {
-  background: #3c3c3d;
+   background: linear-gradient(to left, #e09757, #666767);
   color: white;
 }
 
@@ -545,10 +545,7 @@ footer {
     font-size: 0.9em;
   }
 }
-.webdev-bg{
-  display: flex;
-  
-}
+
 .contact-hero {
     background-color: rgb(85, 84, 84);
    width: 100%;
