@@ -1,6 +1,15 @@
-// Start at top
+// Start at top or last section
 window.addEventListener("load", () => {
-  window.scrollTo(0, 0);
+  const lastSection = sessionStorage.getItem('lastSection');
+  if (lastSection) {
+    sessionStorage.removeItem('lastSection');
+    const element = document.getElementById(lastSection);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  } else {
+    window.scrollTo(0, 0);
+  }
 });
 
 
@@ -17,24 +26,33 @@ const sections = document.querySelectorAll(".section");
 const navLinks = document.querySelectorAll("nav a");
 
 const observer = new IntersectionObserver(entries => {
+  let maxRatio = 0;
+  let activeEntry = null;
+
+  entries.forEach(entry => {
+    if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
+      maxRatio = entry.intersectionRatio;
+      activeEntry = entry;
+    }
+  });
+
   navLinks.forEach(link => {
     link.classList.remove("active");
     link.classList.remove("active-home");
   });
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navLinks.forEach(link => {
-        if (link.getAttribute("href") === `#${entry.target.id}`) {
-          if (entry.target.id === 'home') {
-            link.classList.add("active-home");
-          } else {
-            link.classList.add("active");
-          }
+
+  if (activeEntry) {
+    navLinks.forEach(link => {
+      if (link.getAttribute("href") === `#${activeEntry.target.id}`) {
+        if (activeEntry.target.id === 'home') {
+          link.classList.add("active-home");
+        } else {
+          link.classList.add("active");
         }
-      });
-    }
-  });
-}, { threshold: 0.3 });
+      }
+    });
+  }
+}, { threshold: 0.1 });
 
 sections.forEach(section => observer.observe(section));
 
