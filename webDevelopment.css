@@ -2,6 +2,8 @@
     display: flex;
     justify-content: space-around;
     padding-top: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 .webdev-card{
     display: flex;
@@ -14,9 +16,10 @@
     padding: 30px 50px 30px 50px;
     border-radius: 25px;
     width: 510px;
+    max-width: 100%;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-cursor: pointer;
+    cursor: pointer;
 }
 .webdev-image{
     border-radius: 15px;
@@ -24,6 +27,8 @@ cursor: pointer;
     width: 450px;
     height: 200px;
     flex-shrink: 0;
+    max-width: 100%;
+    height: auto;
 }
 .bg{
     margin-top: 60px;
@@ -47,6 +52,7 @@ cursor: pointer;
     justify-content: center;
     padding-top: 20px;
     gap: 20px;
+    flex-wrap: wrap;
 }
 .scroll-container {
 display: flex;
@@ -55,9 +61,10 @@ overflow-x: auto;
 scroll-behavior: smooth;
 padding: 10px;
 width: 100%;
+-webkit-overflow-scrolling: touch;
 }
 .webdev-rocket-icon {
- 
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,4 +82,82 @@ a {
 .webdev-card:hover {
 transform: scale(1.08); /* increases size */
 box-shadow: 0 10px 25px rgba(0,0,0,0.3); /* smooth shadow effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .webdev-bg {
+        padding-top: 20px;
+        gap: 15px;
+    }
+
+    .webdev-card {
+        width: 90%;
+        max-width: 500px;
+        padding: 20px;
+    }
+
+    .webdev-image {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+
+    .webdev-mainHeading {
+        font-size: 28px;
+    }
+
+    .webdev-mainHeading-container {
+        padding-top: 15px;
+        gap: 15px;
+    }
+
+    .webdev-rocket {
+        font-size: 30px;
+    }
+
+    .bg {
+        margin-top: 80px;
+        padding-bottom: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .webdev-bg {
+        padding-top: 15px;
+    }
+
+    .webdev-card {
+        width: 95%;
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .webdev-mainHeading {
+        font-size: 22px;
+    }
+
+    .webdev-mainHeading-container {
+        padding-top: 10px;
+        gap: 10px;
+    }
+
+    .webdev-image {
+        border-radius: 10px;
+        margin-top: 5px;
+    }
+
+    .webdev-rocket {
+        font-size: 24px;
+    }
+
+    .bg {
+        margin-top: 70px;
+        padding-bottom: 40px;
+    }
+
+    .scroll-container {
+        gap: 15px;
+        padding: 10px 5px;
+    }
 }
