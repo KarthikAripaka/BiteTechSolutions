@@ -1,6 +1,6 @@
 .bg{
      background: linear-gradient(to left, #e09757, #666767);
-     
+      
 }
 .cards-container{
     display: flex;
@@ -23,17 +23,19 @@
 }
 .appdev-left-card{
     width: 350px; /* ADD THIS */
-overflow: hidden;
+    max-width: 100%;
+    overflow: hidden;
 }
 .appdev-right-card{
     width: 350px;
+    max-width: 100%;
     color: white;
-font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
 }
 .appdev-card-down{
     display: flex;
     gap: 70px;
-align-items: flex-start;
+    align-items: flex-start;
 
 }
 .appdev-project-title{
@@ -58,12 +60,16 @@ align-items: flex-start;
     overflow-x: auto;
     scroll-behavior: smooth;
     padding: 10px;
+    -webkit-overflow-scrolling: touch;
     
 }
 .appdev-image{
     width: 220px;
+    height: 500px;
     flex-shrink: 0;
     border-radius: 10px;
+    max-width: 100%;
+    height: auto;
 }
 .appdev-tagline{
 font-weight: 600;
@@ -74,4 +80,81 @@ margin-bottom: 10px;
 .appdev-highlight{
 font-weight: bold;
 font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .appdev-card {
+        padding: 20px;
+        margin: 20px 10px;
+    }
+
+    .appdev-left-card,
+    .appdev-right-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .appdev-card-down {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .appdev-project-title {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .appdev-right-card p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .appdev-scroll-container {
+        padding: 10px 5px;
+    }
+
+    .appdev-image {
+        width: 180px;
+        height: 400px;
+    }
+
+    .appdev-tagline {
+        text-align: center;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .appdev-main-heading-container {
+        padding: 0 10px;
+    }
+
+    .appdev-card {
+        padding: 15px;
+        margin: 15px 5px;
+    }
+
+    .appdev-left-card,
+    .appdev-right-card {
+        max-width: 100%;
+    }
+
+    .appdev-project-title {
+        font-size: 16px;
+    }
+
+    .appdev-right-card p {
+        font-size: 13px;
+    }
+
+    .appdev-image {
+        width: 150px;
+        height: 320px;
+    }
+
+    .appdev-scroll-container {
+        gap: 15px;
+    }
 }
