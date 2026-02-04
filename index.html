@@ -15,9 +15,9 @@
   <a href="index.html" class="company-name-link"><span class="company-name">BiteTech Solutions</span></a>
   <nav>
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
@@ -60,17 +60,52 @@
   </div>
 </section>
 
-<section id="services" class="section dark">
-  <h1>Our Services</h1>
-  <div class="cards">
-    <a href="webDevelopment.html" class="card-link" onclick="sessionStorage.setItem('lastSection', 'services')">
-    <div class="card">Web Development</div>
-    </a>
-    <a href="appDevelopment.html" class="card-link" onclick="sessionStorage.setItem('lastSection', 'services')">
-    <div class="card">Mobile App Development</div>
-    </a>
-    <div class="card">UI / UX Design</div>
-    <div class="card">Custom Solutions</div>
+<section id="services" class="section services-section">
+  <div class="services-bg">
+    <div class="gradient-blob blob-1"></div>
+    <div class="gradient-blob blob-2"></div>
+    <div class="gradient-blob blob-3"></div>
+  </div>
+  <div class="services-container">
+    <h1 class="services-title">Our Services</h1>
+    <p class="services-subtitle">We craft digital experiences that drive business growth</p>
+    <div class="services-grid">
+      <a href="webDevelopment.html" class="service-card" onclick="sessionStorage.setItem('lastSection', 'services')">
+        <div class="card-glow"></div>
+        <div class="service-icon">
+          <i class="fa-solid fa-laptop-code"></i>
+        </div>
+        <h2 class="service-title">Web Development</h2>
+        <p class="service-description">Scale your online presence with high-performance websites that convert visitors into customers and drive measurable business growth.</p>
+        <div class="tech-stack">
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">MongoDB</span>
+        </div>
+        <div class="cta-wrapper">
+          <button class="service-cta">My Projects <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </a>
+      <a href="appDevelopment.html" class="service-card" onclick="sessionStorage.setItem('lastSection', 'services')">
+        <div class="card-glow"></div>
+        <div class="service-icon">
+          <i class="fa-solid fa-mobile-screen"></i>
+        </div>
+        <h2 class="service-title">Mobile App Development</h2>
+        <p class="service-description">Engage users on-the-go with intuitive mobile apps that boost customer retention and open new revenue channels for your business.</p>
+        <div class="tech-stack">
+          <span class="tech-tag">Flutter</span>
+          <span class="tech-tag">React Native</span>
+          <span class="tech-tag">Firebase</span>
+        </div>
+        <div class="cta-wrapper">
+          <button class="service-cta">My Projects <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </a>
+    </div>
+    <p class="trust-micro-copy">
+      <i class="fa-solid fa-check-circle"></i> Trusted by startups & growing businesses worldwide
+    </p>
   </div>
 </section>
 

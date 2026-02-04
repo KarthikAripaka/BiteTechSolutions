@@ -1,3 +1,72 @@
+// Scroll-triggered animations for service cards
+const animateOnScroll = () => {
+  const cards = document.querySelectorAll('.service-card');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  cards.forEach((card) => observer.observe(card));
+};
+
+// Mobile Menu Toggle
+const mobileMenuToggle = () => {
+  const nav = document.querySelector('nav');
+  const navbar = document.querySelector('.navbar');
+  
+  // Create mobile menu button if it doesn't exist
+  if (!document.querySelector('.mobile-menu-btn')) {
+    const menuBtn = document.createElement('button');
+    menuBtn.className = 'mobile-menu-btn';
+    menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    menuBtn.style.cssText = 'display: none; background: none; border: none; color: #222; font-size: 1.5rem; cursor: pointer; margin-left: auto;';
+    navbar.appendChild(menuBtn);
+    
+    menuBtn.addEventListener('click', () => {
+      nav.classList.toggle('mobile-active');
+      menuBtn.innerHTML = nav.classList.contains('mobile-active') 
+        ? '<i class="fa-solid fa-times"></i>' 
+        : '<i class="fa-solid fa-bars"></i>';
+    });
+  }
+  
+  // Show/hide menu button based on screen size
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const checkScreenSize = () => {
+    if (window.innerWidth <= 768) {
+      menuBtn.style.display = 'block';
+      nav.style.display = 'none';
+    } else {
+      menuBtn.style.display = 'none';
+      nav.style.display = 'block';
+      nav.classList.remove('mobile-active');
+    }
+  };
+  
+  checkScreenSize();
+  window.addEventListener('resize', checkScreenSize);
+};
+
+// Initialize scroll animations after DOM loads
+document.addEventListener('DOMContentLoaded', () => {
+  animateOnScroll();
+  mobileMenuToggle();
+});
+
+// Also trigger on window load for already visible elements
+window.addEventListener('load', () => {
+  const visibleCards = document.querySelectorAll('.service-card');
+  visibleCards.forEach((card) => {
+    const rect = card.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      card.style.animationPlayState = 'running';
+    }
+  });
+});
+
 // Start at top or last section
 window.addEventListener("load", () => {
   const lastSection = sessionStorage.getItem('lastSection');

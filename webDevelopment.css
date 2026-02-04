@@ -1,78 +1,277 @@
-.webdev-bg{
+/* WEB DEVELOPMENT PAGE - ORANGE THEME */
+.webdev-bg {
     display: flex;
-    justify-content: space-around;
-    padding-top: 30px;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
 }
-.webdev-card{
+
+.webdev-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
     cursor: pointer;
-    background: linear-gradient(to left, #e59550, #767777);
-    padding: 30px 50px 30px 50px;
-    border-radius: 25px;
-    width: 510px;
+    background: #e59550;
+    padding: 30px 40px 30px 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 550px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-cursor: pointer;
-}
-.webdev-image{
-    border-radius: 15px;
-    margin-top: 10px;
-    width: 450px;
-    height: 200px;
-    flex-shrink: 0;
-}
-.bg{
-    margin-top: 60px;
-    margin-bottom: 50px;
-    
-    background: linear-gradient(to left, #e09757, #666767);
-    padding-bottom: 100px;
-    margin-bottom: 0px;
-}
-.webdev-heading{
-    font-family: sans-serifs;
-}
-.webdev-mainHeading{
-    font-family: roboto;
-    font-weight: 800;
-    font-size: 40px;
-}
-.webdev-mainHeading-container{
-    display: flex;
-    justify-content: center;
-    justify-content: center;
-    padding-top: 20px;
-    gap: 20px;
-}
-.scroll-container {
-display: flex;
-gap: 20px;
-overflow-x: auto;
-scroll-behavior: smooth;
-padding: 10px;
-width: 100%;
-}
-.webdev-rocket-icon {
- 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
-.webdev-rocket{
-    color: black;
-    font-size: 40px;
+.webdev-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(229, 149, 80, 0.4);
 }
+
+.webdev-image {
+    border-radius: 15px;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 450px;
+    height: 200px;
+    object-fit: cover;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.webdev-card:hover .webdev-image {
+    transform: scale(1.02);
+}
+
+.bg {
+    margin-top: 60px;
+    background: rgb(85, 84, 84);
+    padding-bottom: 60px;
+    min-height: calc(100vh - 60px);
+}
+
+.webdev-heading {
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.webdev-mainHeading {
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.webdev-mainHeading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.scroll-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px;
+    width: 100%;
+    justify-content: center;
+    scrollbar-width: thin;
+    scrollbar-color: #e59550 rgba(255, 255, 255, 0.1);
+}
+
+.scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background: #e59550;
+    border-radius: 4px;
+}
+
+.webdev-rocket-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.webdev-rocket {
+    color: white;
+    font-size: 40px;
+    animation: rocketFloat 2s ease-in-out infinite;
+}
+
+@keyframes rocketFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* View Project Button */
+.webdev-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    color: #e59550;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.webdev-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: #f5f5f5;
+}
+
+.webdev-btn i {
+    transition: transform 0.3s ease;
+}
+
+.webdev-btn:hover i {
+    transform: translateX(5px);
+}
+
 a {
     text-decoration: none;
     color: inherit;
 }
 
-.webdev-card:hover {
-transform: scale(1.08); /* increases size */
-box-shadow: 0 10px 25px rgba(0,0,0,0.3); /* smooth shadow effect */
+/* Mobile Responsive - Cards */
+@media (max-width: 768px) {
+    .webdev-mainHeading {
+        font-size: 1.8rem;
+    }
+    
+    .webdev-bg {
+        padding: 20px 15px;
+        gap: 20px;
+    }
+    
+    .webdev-card {
+        padding: 20px;
+        max-width: 100%;
+        border-radius: 15px;
+        gap: 12px;
+    }
+    
+    .webdev-heading {
+        font-size: 1.4rem;
+        margin-bottom: 3px;
+    }
+    
+    .webdev-image {
+        height: 180px;
+        max-width: 100%;
+        border-radius: 12px;
+    }
+    
+    .bg {
+        margin-top: 55px;
+        padding-bottom: 40px;
+    }
+    
+    .scroll-container {
+        gap: 12px;
+        padding: 8px;
+    }
+    
+    .webdev-rocket {
+        font-size: 30px;
+    }
+    
+    .webdev-mainHeading-container {
+        padding-top: 20px;
+        gap: 15px;
+    }
+    
+    .webdev-btn {
+        padding: 10px 24px;
+        font-size: 0.95rem;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .webdev-mainHeading {
+        font-size: 1.5rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .webdev-bg {
+        padding: 15px 10px;
+        gap: 15px;
+    }
+    
+    .webdev-card {
+        padding: 15px 12px;
+        border-radius: 12px;
+        gap: 10px;
+    }
+    
+    .webdev-heading {
+        font-size: 1.2rem;
+    }
+    
+    .webdev-image {
+        height: 140px;
+        border-radius: 10px;
+        margin-top: 5px;
+    }
+    
+    .bg {
+        margin-top: 55px;
+        padding-bottom: 30px;
+    }
+    
+    .scroll-container {
+        gap: 10px;
+        padding: 5px;
+    }
+    
+    .scroll-container::-webkit-scrollbar {
+        height: 6px;
+    }
+    
+    .webdev-rocket {
+        font-size: 24px;
+    }
+    
+    .webdev-mainHeading-container {
+        padding-top: 15px;
+        gap: 10px;
+    }
+    
+    .webdev-btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+        border-radius: 20px;
+    }
 }
